@@ -32,12 +32,15 @@ public class Task2 {
             
             for(int i= 0;i< 10; i++){
 
+                var tempArr1 = Arrays.copyOf(array1,arraySize);
+                var tempArr2 = Arrays.copyOf(array2,arraySize);
+
                 var start = Instant.now();
 
-                array1 = sort.bubbleSort(array1);
-                array2 = sort.bubbleSort(array2);
+                tempArr1 = sort.bubbleSort(tempArr1);
+                tempArr2 = sort.bubbleSort(tempArr2);
 
-                sort.merge(array1, array2);
+                sort.merge(tempArr1, tempArr2);
 
                 var end = Instant.now();
                 times[i] = Duration.between(start, end).toMillis(); 

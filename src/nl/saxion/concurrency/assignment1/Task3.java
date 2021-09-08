@@ -33,14 +33,34 @@ public class Task3 {
 
             
             for(int i= 0;i< 10; i++){
+                //System.out.println(sort.isSorted(array1));
+                
+                var tempArr1 = Arrays.copyOf(array1,tests[test]);
+                var tempArr2 = Arrays.copyOf(array2,tests[test]);
 
                 var start = Instant.now();
 
-                array1 = sort.bubbleSort(array1);
-                array2 = sort.bubbleSort(array2);
+                var runnable1 = new sortRunnable(tempArr1);
+                var thread1 = new Thread(runnable1);
+                
+                var runnable2 = new sortRunnable(tempArr2);
+                var thread2 = new Thread(runnable2);
+                
+                thread1.start();
+                thread2.start();
+                
+                
+                try {
+                    thread1.join();
+                    thread2.join();                
+                } catch (Exception e) {
+                    System.err.println(e);
+                }
 
+                tempArr1 = runnable1.getResult();
+                tempArr2 = runnable2.getResult();
 
-                sort.merge(array1, array2);
+                sort.merge(tempArr1, tempArr2);
 
                 var end = Instant.now();
                 times[i] = Duration.between(start, end).toMillis(); 

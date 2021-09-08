@@ -26,9 +26,11 @@ public class Task1 {
             var times = new Long[10];
 
             for(int i= 0;i< 10; i++){
+                var tempArr = Arrays.copyOf(array, arraySize);
+                
                 var start = Instant.now();
 
-                sort.bubbleSort(array);
+                sort.bubbleSort(tempArr);
 
                 var end = Instant.now();
                 times[i] = Duration.between(start, end).toMillis(); 

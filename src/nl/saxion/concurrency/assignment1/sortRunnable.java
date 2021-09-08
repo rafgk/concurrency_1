@@ -14,4 +14,5 @@ public class sortRunnable implements Runnable {
     public int[] getResult(){
         return array;
     }
+
 }
