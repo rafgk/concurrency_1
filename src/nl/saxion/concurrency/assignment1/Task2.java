@@ -13,7 +13,6 @@ public class Task2 {
         int[] tests = new int[]{25000,50000,100000, 200000, 400000};
         //Each test is an entry in the array list.
         //Each entry has ten results from the calculations
-        var results = new  ArrayList<Duration[]>();
 
         for(int test = 0; test < tests.length; test++){
             int arraySize = tests[test];
@@ -32,8 +31,10 @@ public class Task2 {
             
             for(int i= 0;i< 10; i++){
 
-                var tempArr1 = Arrays.copyOf(array1,arraySize);
-                var tempArr2 = Arrays.copyOf(array2,arraySize);
+                var tempArr1 = Arrays.copyOf(array1,array1.length);
+                var tempArr2 = Arrays.copyOf(array2,array2.length);
+                System.out.println(tempArr1.length);
+                System.out.println(tempArr2.length);
 
                 var start = Instant.now();
 
