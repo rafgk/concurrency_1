@@ -33,8 +33,6 @@ public class Task2 {
 
                 var tempArr1 = Arrays.copyOf(array1,array1.length);
                 var tempArr2 = Arrays.copyOf(array2,array2.length);
-                System.out.println(tempArr1.length);
-                System.out.println(tempArr2.length);
 
                 var start = Instant.now();
 

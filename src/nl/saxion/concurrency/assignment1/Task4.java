@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Task4 {
-    public static int limit = 200;
 
     public static int[] sortArray(int[] array, int threshold){
         TreeRunnable treeRunnable = new TreeRunnable(array, threshold);
@@ -26,16 +25,16 @@ public class Task4 {
 
     public static void main(String[] args) {
         Generator generator = new Generator();
-        Sort sort = new Sort();
         //The array sizes for each test
-        int[] tests = new int[]{25000,100000};
+        int[] tests = new int[]{50000, 10000,1000, 500,50};
         //Each test is an entry in the array list.
         //Each entry has ten results from the calculations
         
         for(int test = 0; test < tests.length; test++){
-            int arraySize = tests[test];
+            int arraySize = 100000;
+            int threshold = tests[test];
 
-            System.out.println("Starting test with " + arraySize + " array entries");
+            System.out.println("Threshold: " + threshold );
             
             //The array of integers to be sorted
             var array = generator.array(arraySize);
@@ -43,11 +42,11 @@ public class Task4 {
             var times = new Long[10];
    
             for(int i= 0;i< 10; i++){
-                System.out.println( "Sorted at start:" + sort.isSorted(array));
+                //System.out.println( "Sorted at start:" + sort.isSorted(array));
 
                 var start = Instant.now();
 
-                sortArray(array, limit);
+                sortArray(array, threshold);
                 
                 var end = Instant.now();
                 times[i] = Duration.between(start, end).toMillis(); 
