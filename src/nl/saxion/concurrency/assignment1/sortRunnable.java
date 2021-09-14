@@ -8,7 +8,7 @@ public class sortRunnable implements Runnable {
     }
 
     public void run(){
-        array = sort.insertionSort(array);
+        array = sort.bubbleSort(array);
     }
 
     public int[] getResult(){

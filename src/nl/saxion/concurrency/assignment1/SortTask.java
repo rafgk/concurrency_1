@@ -32,7 +32,7 @@ public class SortTask extends RecursiveTask<int[]> {
             return sort.merge(array1, array2);
 
         }else{
-            return sort.insertionSort(array);
+            return sort.bubbleSort(array);
         }
     }
 }
