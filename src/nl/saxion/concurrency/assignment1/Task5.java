@@ -44,7 +44,7 @@ public class Task5 {
                 //End timer
                 var end = Instant.now();
                 //Check if array is actually sorted
-                System.out.println("Out sorted: "+ sort.isSorted(outArray));
+                //System.out.println("Out sorted: "+ sort.isSorted(outArray));
 
                 times[i] = Duration.between(start, end).toMillis(); 
             }
