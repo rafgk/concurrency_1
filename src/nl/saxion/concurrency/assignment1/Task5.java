@@ -10,7 +10,7 @@ public class Task5 {
         Generator generator = new Generator();
         Sort sort = new Sort();
         //The array sizes for each test
-        int[] tests = new int[]{50000, 10000,1000, 500,50};
+        int[] tests = new int[]{50000, 10000,1000, 500,50,10};
 
         for(int test = 0; test < tests.length; test++){
             int threshold = tests[test];
